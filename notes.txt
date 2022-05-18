@@ -1,2 +1,7 @@
 nest g module messages
 nest g controller messages/messages --flat
+
+Dto - Data Transfer Object
+dto carries data between two places
+
+npm i class-validator class-transformer
