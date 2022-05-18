@@ -1,0 +1,2 @@
+nest g module messages
+nest g controller messages/messages --flat
