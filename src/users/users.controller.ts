@@ -6,6 +6,7 @@ import { Serialize } from '../interceptors/serialize.interceptor';
 import { UserDto } from './dto/user.dto';
 
 @Controller('auth')
+@Serialize(UserDto) // this syntax is for serializing every controller
 export class UsersController {
     constructor(private usersService: UsersService) {}
 
@@ -14,7 +15,7 @@ export class UsersController {
         this.usersService.create(body.email, body.password);
     }
 
-    @Serialize(UserDto)
+    // @Serialize(UserDto) // this syntax is for serializing single controller
     @Get('/:id')
     async findUser(@Param('id') id: string) {
         // console.log('handler is running');
@@ -23,7 +24,7 @@ export class UsersController {
         return user;
     }
 
-    @Serialize(UserDto)
+    // @Serialize(UserDto) // this syntax is for serializing single controller
     @Get()
     async findAllUsers(@Query('email') email: string) {
         // console.log('handler is running');
