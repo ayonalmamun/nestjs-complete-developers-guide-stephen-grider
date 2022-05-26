@@ -12,3 +12,8 @@ npm i @nestjs/typeorm typeorm sqlite3
 extension: sqlite
 
 npm i class-validator class-transformer
+
+UseInterceptors
+ClassSerializerInterceptor
+
+Interceptor - kinda same as middleware
